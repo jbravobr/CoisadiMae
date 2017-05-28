@@ -90,11 +90,6 @@ namespace CoisadiMae.Styles
                 {
                     Property = Label.TextProperty,
                     Value = Util.Fonts.FontAwesomeFont.Camera
-                },
-                new Setter
-                {
-                    Property = Label.FontFamilyProperty,
-                    Value = IconsFontIonic
                 }
             }
         };
@@ -117,7 +112,7 @@ namespace CoisadiMae.Styles
 				new Setter
 				{
 					Property = Label.FontFamilyProperty,
-					Value = IconsFontIonic
+					Value = IconsFontFamily
 				}
             }
         };
@@ -136,6 +131,18 @@ namespace CoisadiMae.Styles
                 {
                     Property = Entry.BackgroundColorProperty,
                     Value =Color.FromHex("#00FFFFFF")
+                }
+            }
+        };
+
+        public static Style FontIconBase = new Style(typeof(Label))
+        {
+            Setters =
+            {
+                new Setter
+                {
+                    Property = Label.FontFamilyProperty,
+                    Value =IconsFontFamily
                 }
             }
         };
@@ -476,7 +483,7 @@ namespace CoisadiMae.Styles
                 new Setter
                 {
                     Property = Label.FontFamilyProperty,
-                    Value = "grialshapes"
+                    Value = IconsFontFamily
                 },
                 new Setter
                 {
@@ -574,7 +581,7 @@ namespace CoisadiMae.Styles
                 new Setter
                 {
                     Property = Label.FontFamilyProperty,
-                    Value = IconsFontAwesome
+                    Value = IconsFontFamily
                 }
             }
         };
@@ -586,7 +593,7 @@ namespace CoisadiMae.Styles
                 new Setter
                 {
                     Property = Label.FontFamilyProperty,
-                    Value = IconsFontIonic
+                    Value = IconsFontFamily
                 }
             }
         };

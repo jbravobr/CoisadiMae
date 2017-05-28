@@ -71,8 +71,9 @@
     <Compile Include="Util\Extensions\EnumDescriptionAttribute.cs" />
     <Compile Include="Util\Extensions\GetEnumDescriptionAttribute.cs" />
     <Compile Include="Util\Extensions\IEnumerableExtensions.cs" />
-    <Compile Include="Util\Fonts\FontAwesomeFont.cs" />
+    <Compile Include="Util\UIFunctions\FontAwesomeFont.cs" />
     <Compile Include="Util\UIFunctions\DialogFunction.cs" />
+    <Compile Include="Util\UIFunctions\GrialShapesFont.cs" />
     <Compile Include="Util\UIFunctions\IDialogsFunction.cs" />
     <Compile Include="Util\Constants.cs" />
     <Compile Include="Util\NotifyTaskCompletion.cs" />
@@ -222,6 +223,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Util\Fonts\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

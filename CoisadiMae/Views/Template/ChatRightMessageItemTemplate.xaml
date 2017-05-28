@@ -5,56 +5,57 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Styles="clr-namespace:CoisadiMae.Styles;assembly=CoisadiMae"
-    xmlns:font="clr-namespace:CoisadiMae.Util.Fonts;assembly=CoisadiMae">
+    xmlns:font="clr-namespace:CoisadiMae.Util.Fonts;assembly=CoisadiMae"
+    xmlns:local="clr-namespace:CoisadiMae;assembly=CoisadiMae">
     <!--  xmlns:icon="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize">  -->
-        <Grid
-            Padding="0,0,0,20"
-            ColumnSpacing="0"
-            RowSpacing="0"
-            VerticalOptions="StartAndExpand">
+    <Grid
+        Padding="0,0,0,20"
+        ColumnSpacing="0"
+        RowSpacing="0"
+        VerticalOptions="StartAndExpand">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-            <!--  LEFT TRIANGLE  -->
+        <!--  LEFT TRIANGLE  -->
+        <Label
+            Grid.Row="1"
+            Grid.Column="1"
+            FontSize="26"
+            HorizontalTextAlignment="Start"
+            Style="{x:Static Styles:Theme.FontIcon}"
+            Text="{x:Static local:GrialShapesFont.BoldArrowDown}"
+            TextColor="{x:Static Styles:Theme.ChatRightBalloonBackgroundColor}"
+            TranslationX="-26"
+            TranslationY="-11"
+            VerticalTextAlignment="Start" />
+
+
+        <!--  BALLOON BACKGROUND  -->
+        <StackLayout
+            Grid.Row="0"
+            Grid.Column="0"
+            Padding="10"
+            BackgroundColor="{x:Static Styles:Theme.ChatRightBalloonBackgroundColor}"
+            VerticalOptions="EndAndExpand">
+
             <Label
-                Grid.Row="1"
-                Grid.Column="1"
-                FontSize="26"
-                HorizontalTextAlignment="Start"
-                Style="{x:Static Styles:Theme.FontIcon}"
-                Text="{x:Static font:FontAwesomeFont.BoldArrowDown}"
-                TextColor="{x:Static Styles:Theme.ChatRightBalloonBackgroundColor}"
-                TranslationX="-26"
-                TranslationY="-11"
-                VerticalTextAlignment="Start" />
+                FontSize="12"
+                Text="{Binding Text}"
+                TextColor="{x:Static Styles:Theme.ChatRightTextColor}" />
+        </StackLayout>
 
 
-            <!--  BALLOON BACKGROUND  -->
-            <StackLayout
-                Grid.Row="0"
-                Grid.Column="0"
-                Padding="10"
-                BackgroundColor="{x:Static Styles:Theme.ChatRightBalloonBackgroundColor}"
-                VerticalOptions="EndAndExpand">
+        <!--  RIGHT AVATAR  -->
 
-                <Label
-                    FontSize="12"
-                    Text="{Binding Text}"
-                    TextColor="{x:Static Styles:Theme.ChatRightTextColor}" />
-            </StackLayout>
-
-
-            <!--  RIGHT AVATAR  -->
-
-            <!--<artina:CircleImage
+        <!--<artina:CircleImage
                 Grid.Row="1"
                 Grid.Column="1"
                 BorderColor="{x:Static Styles:Theme.ChatRightBalloonBackgroundColor}"
@@ -62,28 +63,28 @@
                 Source="{Binding From.Avatar}"
                 TranslationY="10" />-->
 
-            <!--  WHEN  -->
-            <Label
-                Grid.Row="1"
-                Grid.Column="0"
-                FontSize="12"
-                HorizontalOptions="Start"
-                Text="{Binding FormattedDate}"
-                TextColor="{x:Static Styles:Theme.BaseTextColor}"
-                TranslationX="10"
-                TranslationY="10"
-                VerticalOptions="CenterAndExpand" />
+        <!--  WHEN  -->
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            FontSize="12"
+            HorizontalOptions="Start"
+            Text="{Binding FormattedDate}"
+            TextColor="{x:Static Styles:Theme.BaseTextColor}"
+            TranslationX="10"
+            TranslationY="10"
+            VerticalOptions="CenterAndExpand" />
 
-            <!--  BY  -->
-            <Label
-                Grid.Row="1"
-                Grid.Column="0"
-                FontSize="12"
-                HorizontalTextAlignment="End"
-                Text="usuario"
-                TextColor="{x:Static Styles:Theme.BaseTextColor}"
-                TranslationX="-10"
-                TranslationY="10"
-                VerticalTextAlignment="Center" />
-        </Grid>
+        <!--  BY  -->
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            FontSize="12"
+            HorizontalTextAlignment="End"
+            Text="usuario"
+            TextColor="{x:Static Styles:Theme.BaseTextColor}"
+            TranslationX="-10"
+            TranslationY="10"
+            VerticalTextAlignment="Center" />
+    </Grid>
 </ViewCell>

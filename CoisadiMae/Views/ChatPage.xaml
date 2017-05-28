@@ -14,18 +14,19 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
+
+        <!--<ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">-->
         <ListView
-            Grid.Column="0"
-            HasUnevenRows="false"
+            x:Name="lvtChat"
+            Margin="0"
+            HasUnevenRows="True"
             ItemTemplate="{StaticResource MessageTemplateSelector}"
             ItemsSource="{Binding AtualConversation.Messages}"
             SeparatorColor="Transparent"
-            SeparatorVisibility="None">
+            SeparatorVisibility="None"
+            VerticalOptions="FillAndExpand">
             <ListView.RowHeight>
                 <OnIdiom
                     x:TypeArguments="x:Int32"
@@ -34,47 +35,47 @@
             </ListView.RowHeight>
         </ListView>
 
-        <Grid Grid.Column="0" RowSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="52" />
-            </Grid.RowDefinitions>
 
-            <ScrollView Grid.Row="0">
-                <StackLayout x:Name="ChatMessagesListView" Padding="20" />
-            </ScrollView>
 
-            <!--  BUTTONS CONTAINER  -->
-            <Grid
-                Grid.Row="1"
-                Padding="10"
-                BackgroundColor="#cfd8dc"
-                ColumnSpacing="10"
-                MinimumHeightRequest="40">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="40" />
-                    <ColumnDefinition Width="50*" />
-                    <ColumnDefinition Width="40" />
-                </Grid.ColumnDefinitions>
-                <!--  - PICTURE BUTTON  -->
-                <Label
-                    Grid.Column="0"
-                    Style="{x:Static Styles:Theme.ChatIconButtonPictureStyle}"
-                    TextColor="Black" />
 
-                <!--  ENTRY  -->
-                <Entry
-                    Grid.Column="1"
-                    Placeholder="Type your message..."
-                    Style="{x:Static Styles:Theme.ChatMessageEntryStyle}" />
+        <!--  BUTTONS CONTAINER  -->
+        <Grid
+            BackgroundColor="#cfd8dc"
+            ColumnSpacing="10"
+            MinimumHeightRequest="40"
+            VerticalOptions="End">
 
-                <!--  - SEND BUTTON  -->
-                <Label
-                    Grid.Column="2"
-                    Style="{x:Static Styles:Theme.ChatIconButtonSendStyle}"
-                    TextColor="{x:Static Styles:Theme.AccentColor}" />
-            </Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="40" />
+            </Grid.ColumnDefinitions>
+            <!--  - PICTURE BUTTON  -->
+            <Label
+                Grid.Column="0"
+                Style="{x:Static Styles:Theme.ChatIconButtonPictureStyle}"
+                TextColor="Black" />
+
+            <!--  ENTRY  -->
+            <Entry
+                Grid.Column="1"
+                Placeholder="Type your message..."
+                Style="{x:Static Styles:Theme.ChatMessageEntryStyle}"
+                Text="{Binding MessageText}" />
+
+            <!--  - SEND BUTTON  -->
+            <Label
+                Grid.Column="2"
+                Style="{x:Static Styles:Theme.ChatIconButtonSendStyle}"
+                TextColor="{x:Static Styles:Theme.AccentColor}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SendMessageCmd}" />
+                </Label.GestureRecognizers>
+            </Label>
         </Grid>
-    </Grid>
+
+    </StackLayout>
+
+
 </ContentPage>

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using SQLiteNetExtensions.Attributes;
+using System.Collections.ObjectModel;
 
 namespace CoisadiMae.Models
 {
@@ -10,6 +11,6 @@ namespace CoisadiMae.Models
 
         public Bot Bot { get; set; }
 
-        public List<Message> Messages { get; set; }
+        public ObservableCollection<Message> Messages { get; set; }
     }
 }

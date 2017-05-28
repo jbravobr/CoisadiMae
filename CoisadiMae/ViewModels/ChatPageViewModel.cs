@@ -53,7 +53,7 @@ namespace CoisadiMae.ViewModels
                 AtualConversation = new Conversation()
                 {
                     Bot = new Bot { Name = "Ana Maria", Id = 1 },
-                    Messages = new List<Message>()
+                    Messages = new System.Collections.ObjectModel.ObservableCollection<Message>()
                 };
                 AtualConversation.Messages.Add(new Message { Text = text, Date = DateTime.Now, Owner = Models.Enums.EnumOwner.Bot });
                 await _conversationService.AddAsync(AtualConversation);
@@ -90,14 +90,21 @@ namespace CoisadiMae.ViewModels
                     {
                         if (AtualConversation.Messages == null || !AtualConversation.Messages.Any())
                         {
-                            AtualConversation.Messages = new List<Message>
+                           
+
+                            AtualConversation.Messages = new System.Collections.ObjectModel.ObservableCollection<Message>
                             {
                                 new Message() { Text = MessageText, Date = DateTime.Now, Owner = Models.Enums.EnumOwner.Mom },
-                                new Message() { Text = string.Concat(" ", ret), Date = DateTime.Now, Owner = Models.Enums.EnumOwner.Bot }
+                                new Message() { Text = string.Join(" ", ret.output.text), Date = DateTime.Now, Owner = Models.Enums.EnumOwner.Bot }
                             };
 
                             await _conversationService.AddAsync(AtualConversation);
                             AtualConversation = (await _conversationService.GetAllAsync()).Last();
+                        }
+                        else
+                        {
+                            AtualConversation.Messages.Add(new Message() { Text = MessageText, Date = DateTime.Now, Owner = Models.Enums.EnumOwner.Mom });
+                            AtualConversation.Messages.Add(new Message() { Text = string.Join(" ", ret.output.text), Date = DateTime.Now, Owner = Models.Enums.EnumOwner.Bot });
                         }
 
                         MessageText = string.Empty;

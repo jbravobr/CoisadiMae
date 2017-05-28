@@ -18,7 +18,7 @@ namespace CoisadiMae
         {
             try
             {
-                NavigationService.NavigateAsync("ChatPage");
+                NavigationService.NavigateAsync("RootPage");
             }
             catch (System.Exception ex)
             {
