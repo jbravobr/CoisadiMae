@@ -28,12 +28,12 @@
             SeparatorColor="Transparent"
             SeparatorVisibility="None"
             VerticalOptions="FillAndExpand">
-            <ListView.RowHeight>
+            <!--<ListView.RowHeight>
                 <OnIdiom
                     x:TypeArguments="x:Int32"
                     Phone="80"
                     Tablet="120" />
-            </ListView.RowHeight>
+            </ListView.RowHeight>-->
         </ListView>
 
 
