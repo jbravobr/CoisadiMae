@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Styles="clr-namespace:CoisadiMae.Styles;assembly=CoisadiMae"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    Title="Chat"
     xmlns:selector="clr-namespace:CoisadiMae.DataTemplateSelector;assembly=CoisadiMae"
     prism:ViewModelLocator.AutowireViewModel="True">
 
@@ -52,10 +53,10 @@
                 <ColumnDefinition Width="40" />
             </Grid.ColumnDefinitions>
             <!--  - PICTURE BUTTON  -->
-            <Label
+          <!--  <Label
                 Grid.Column="0"
                 Style="{x:Static Styles:Theme.ChatIconButtonPictureStyle}"
-                TextColor="Black" />
+                TextColor="Black" />-->
 
             <!--  ENTRY  -->
             <Entry

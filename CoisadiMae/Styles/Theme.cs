@@ -12,8 +12,6 @@ namespace CoisadiMae.Styles
         public static double MainMenuLabelFontsize = 18;
 
         public static string IconsFontFamily = "grialshapes";
-        public static string IconsFontAwesome = "FontAwesome";
-        public static string IconsFontIonic = "Ionicons";
 
         public static Color OverImageTextColor = Color.FromHex("#FFFFFF");
         public static Color AccentColor = Color.FromHex("#FFDA125F");

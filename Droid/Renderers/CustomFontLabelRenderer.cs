@@ -12,7 +12,7 @@ namespace CoisadiMae.Droid.Renderers
                 new Tuple<FontAttributes, string>(FontAttributes.None, "grialshapes.ttf"),
                 new Tuple<FontAttributes, string>(FontAttributes.Bold, "grialshapes.ttf"),
                 new Tuple<FontAttributes, string>(FontAttributes.Italic, "grialshapes.ttf")
-            },
+            }/*,
             new [] {
                 new Tuple<FontAttributes, string>(FontAttributes.None, "fontawesome-webfont.ttf"),
                 new Tuple<FontAttributes, string>(FontAttributes.Bold, "fontawesome-webfont.ttf"),
@@ -22,7 +22,7 @@ namespace CoisadiMae.Droid.Renderers
                 new Tuple<FontAttributes, string>(FontAttributes.None, "ionicons.ttf"),
                 new Tuple<FontAttributes, string>(FontAttributes.Bold, "ionicons.ttf"),
                 new Tuple<FontAttributes, string>(FontAttributes.Italic, "ionicons.ttf")
-            }
+            }*/
         };
 
         protected override bool CheckIfCustomFont(string fontFamily, FontAttributes attributes, out string fontFileName)
