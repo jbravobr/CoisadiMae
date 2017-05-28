@@ -15,7 +15,7 @@ namespace CoisadiMae.iOS
             global::Xamarin.Forms.Forms.Init();
 
 
-            UXDivers.Artina.Shared.GrialKit.Init(new ThemeColors(), "Sliphis.iOS.GrialLicense");
+            UXDivers.Artina.Shared.GrialKit.Init(new ThemeColors(), "CoisadiMae.iOS.GrialLicense");
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
