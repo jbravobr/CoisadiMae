@@ -21,6 +21,8 @@ namespace CoisadiMae.ViewModels
         public string MessageText { get; set; }
         public Conversation AtualConversation { get; set; }
         public DelegateCommand SendMessageCmd { get; set; }
+        public Action<Message> NewMessage { get; set; }
+
 
         public ChatPageViewModel(IChatApplicationService chatService,
                                  IApplicationService<Conversation> conversationService,
@@ -111,6 +113,8 @@ namespace CoisadiMae.ViewModels
                     }
                     else
                         _dialogFunction.ShowToast(Util.Enums.EnumToastType.Warning, "Erro ao enviar mensagem, por favor tente novamente");
+
+                    NewMessage.Invoke(AtualConversation.Messages.Last());
                 });
             }
         }
